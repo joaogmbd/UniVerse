@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registre-se</title>
+    <link rel="stylesheet" href="{% static 'registrar.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <form method="POST">
+            <div class="left">
+                <h2>Registre-se</h2>
+                <div class="input-group">
+                    <label for="name">Nome</label>
+                    <input type="text" id="name" name="name" placeholder="Escreva Seu Nome" required>
+                </div>
+                <div class="input-group">
+                    <label for="telefone">Telefone</label>
+                    <input type="tel" id="telefone" name="telefone" placeholder="**********" required>
+                </div>
+                <div class="input-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="exemplo@universidade.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="senha">Senha</label>
+                    <input type="password" id="senha" name="senha" placeholder="*********" required>
+                </div>
+                <div class="input-group">
+                    <label for="confirme_senha">Confirme sua Senha</label>
+                    <input type="password" id="confirme_senha" name="confirme_senha" placeholder="*********" required>
+                </div>
+                <ul class="password-requirements">
+                    <li>Sua senha deve conter 8 caracteres</li>
+                    <li>Sua senha deve conter letras maiúsculas e minúsculas</li>
+                    <li>Sua senha deve conter números</li>
+                </ul>
+            </div>
+            <div class="right">
+                <div class="input-group">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" placeholder="***********" required>
+                </div>
+                <div class="input-group">
+                    <label for="estado">Estado</label>
+                    <input type="text" id="estado" name="estado" placeholder="Escolha seu Estado" required>
+                </div>
+                <div class="input-group">
+                    <label for="faculdade">Faculdade</label>
+                    <input type="text" id="faculdade" name="faculdade" placeholder="exemplo@universidade.com" required>
+                </div>
+                <div class="input-group">
+                    <label for="atletica">Atlética</label>
+                    <select id="atletica" name="atletica" required>
+                        <option value="">Escolha o nome da sua atlética</option>
+                        <!-- Options can be dynamically generated in Django -->
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label for="curso">Curso</label>
+                    <select id="curso" name="curso" required>
+                        <option value="">Escolha seu curso</option>
+                        <!-- Options can be dynamically generated in Django -->
+                    </select>
+                </div>
+                <div class="input-group checkbox">
+                    <input type="checkbox" id="remember_me" name="remember_me">
+                    <label for="remember_me">Relembre-me</label>
+                </div>
+            </div>
+            <div class="submit-group">
+                <button type="submit">Entrar</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>

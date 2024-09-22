@@ -1,0 +1,167 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniVerse Navbar + Ofertas Atléticas</title>
+    <link rel="stylesheet" href="{% static 'produto.css' %}">
+    <script>
+        function showTabContent(tabName) {
+            var tabs = document.getElementsByClassName("tab-content");
+            
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            
+            document.getElementById(tabName).style.display = "block";
+        }
+
+        window.onload = function() {
+            showTabContent('descricao');
+        }
+        function showTabContent(tabName) {
+            var tabs = document.getElementsByClassName("tab-content");
+            var buttons = document.querySelectorAll(".tabs button");
+            
+            for (var i = 0; i < tabs.length; i++) {
+                tabs[i].style.display = "none";
+            }
+            
+            for (var i = 0; i < buttons.length; i++) {
+                buttons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).style.display = "block";
+            
+            document.querySelector('.tabs button[onclick="showTabContent(\'' + tabName + '\')"]').classList.add('active');
+        }
+    </script>
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'Sem título.png' %}" alt="Descrição da Imagem" width="50" height="50">
+                <div class="logo-text">
+                    <h1>UniVerse</h1>
+                    <span>Products & Events</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar por itens">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="login-btn">
+                <a href="{% url "core:login" %}">
+                    <button>Login</button>
+                </a>
+            </div>
+        </div>
+        <nav class="breadcrumb">
+            <a href="{% url "core:index" %}">Home</a> &gt; <a href="#">Acesso ao Evento</a> &gt; <a href="#">Contato</a>
+        </nav>
+    </header>
+
+    <!-- Produto -->
+    <div class="product-container">
+        <div class="product-images">
+            <img class="main-image" src="{% static 'img/bolo.jpeg' %}" alt="Bolo di Murango">
+            <div class="thumbnail-images">
+                <img src="{% static 'img/bolo.jpeg' %}" alt="Bolo Thumbnail">
+                <img src="{% static 'img/bolo.jpeg' %}" alt="Bolo Thumbnail">
+                <img src="{% static 'img/bolo.jpeg' %}" alt="Bolo Thumbnail">
+            </div>
+        </div>
+        <div class="product-details">
+            <h2>Bolo di Murango</h2>
+            <div class="rating">
+                ⭐⭐⭐⭐⭐ <span>(22 avaliações)</span>
+            </div>
+            <p class="price">R$ 120,00</p>
+            <p class="stock-info">Em Estoque: Ilimitado</p>
+            <p>Quantidade:</p>
+            <input type="number" value="1">
+            <button class="buy-btn">Comprar</button>
+            <ul>
+                <li>Tipo: Food</li>
+                <li>Qualidade: Usado</li>
+                <li>Fabricação: 28/02/2050</li>
+                <li>Alergias: Contém Ovo, Leite, Trigo e derivados</li>
+            </ul>
+        </div>
+        <div class="vendor-info">
+            <img src="{% static "Sem Título.png" %}">
+            <h3>Vendedor</h3>
+            <p>Zéca Urubu</p>
+            <p>Artigos de Direito</p>
+            <p><a href="mailto:zeca@email.com">zeca@email.com</a></p>
+            <p>(91) 99856-8522</p>
+        </div>
+    </div>
+
+    <!-- Abas -->
+    <div class="tabs">
+        <button onclick="showTabContent('avaliacoes')">Avaliações</button>
+        <button onclick="showTabContent('descricao')">Descrição</button>
+        <button onclick="showTabContent('denunciar')">Denunciar</button>
+    </div>
+
+    <!-- Conteúdo das Abas -->
+    <div class="tab-content" id="avaliacoes" style="display:none;">
+        <div class="reviews">
+            <div class="review-card">
+                <img src="{% static "img/avaliador.jpg" %}" alt="Reviewer Image">
+                <div class="review-content">
+                    <h4>Inteligência Artificial</h4>
+                    ⭐⭐⭐⭐⭐
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="{% static "img/avaliador.jpg" %}" alt="Reviewer Image">
+                <div class="review-content">
+                    <h4>Inteligência Artificial</h4>
+                    ⭐⭐⭐⭐⭐
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="{% static "img/avaliador.jpg" %}" alt="Reviewer Image">
+                <div class="review-content">
+                    <h4>Inteligência Artificial</h4>
+                    ⭐⭐⭐⭐⭐
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+                </div>
+            </div>
+            <div class="review-card">
+                <img src="{% static "img/avaliador.jpg" %}" alt="Reviewer Image">
+                <div class="review-content">
+                    <h4>Inteligência Artificial</h4>
+                    ⭐⭐⭐⭐⭐
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus luctus urna sed urna ultricies ac tempor dui sagittis.</p>
+                </div>
+            </div>
+            <!-- Mais avaliações -->
+        </div>
+    </div>
+
+    <div class="tab-content" id="descricao" style="display:none;">
+        <ul>
+            <li>Tipo: Food</li>
+            <li>Qualidade: Usado</li>
+            <li>Fabricação: 28/02/2050</li>
+            <li>Alergias: Contém Ovo, Leite, Trigo e derivados</li>
+        </ul>
+    </div>
+
+    <div class="tab-content" id="denunciar" style="display:none;">
+        <p>Se você encontrou algum problema com este produto, entre em contato conosco imediatamente ou denuncie usando o formulário abaixo.</p>
+        <form>
+            <textarea placeholder="Descreva o problema"></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </div>
+</body>
+</html>

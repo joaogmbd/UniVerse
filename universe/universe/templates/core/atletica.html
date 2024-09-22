@@ -1,0 +1,88 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniVerse Navbar + Ofertas Atléticas</title>
+    <link rel="stylesheet" href="{% static 'atletica.css' %}">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <img src="{% static 'Sem título.png' %}" alt="Descrição da Imagem" width="50" height="50">
+                <div class="logo-text">
+                    <h1>UniVerse</h1>
+                    <span>Products & Events</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar por itens">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="login-btn">
+                <a href="{% url "core:login" %}">
+                    <button>Login</button>
+                </a>
+            </div>
+        </div>
+        <nav class="breadcrumb">
+            <a href="{% url "core:index" %}">Home</a> &gt; <a href="#">Atleticas</a> 
+        </nav>
+    </header>
+    <section class="banner">
+        <img src="{% static 'img/avaliador.jpg' %}" alt="Banner" class="banner-img">
+    </section>
+
+    <!-- Content Section -->
+    <section class="content">
+        <div class="container">
+            <div class="association-details">
+                <img src="{% static 'img/avaliador.jpg' %}" alt="Logo" class="association-logo">
+                <h1>Associação Atlética Acadêmica de Ciencia da Computação</h1>
+                <p>Atlética - Espírito Santo/ES</p>
+                <p>A Associação Atlética Acadêmica de Ciência da Computação, denominada A.A.A.C.C., foi fundada em 31 de março de 2016 e sediada na Universidade Vila Velha, Vila Velha, Espírito Santo.</p>
+                <p>Email: <a href="mailto:tutubaroesuvv@uvvnet.com.br">tutubaroesuvv@uvvnet.com.br</a></p>
+                <p>Instagram: <a href="itutubaroesuvv">tutubaroesuvv</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tabs Section -->
+    <section class="tabs">
+        <nav class="tabs-nav">
+            <a href="#">Produtos</a>
+            <a href="#">Eventos</a>
+            <a href="#">Esportes</a>
+            <a href="#">Parceiros</a>
+            <a href="#">Membros</a>
+        </nav>
+    </section>
+
+    <!-- Products Section -->
+    <section class="products">
+        <h2>Produtos</h2>
+        <div class="product-grid">
+            <div class="product-card">
+                <a href="{% url "core:produto" %}">
+                <img src="{% static 'img/bolo.jpeg' %}" alt="Bolo de Morango">
+                <h3>Bolo di Murango</h3>
+                <p>R$ 120,00</p>
+                <button class="btn-add">Adicionar</button>
+                </a>
+            </div>
+            <div class="product-card">
+                <a href="{% url "core:produto" %}">
+                <img src="{% static 'img/bolo.jpeg' %}" alt="Bolo de Morango">
+                <h3>Bolo di Murango</h3>
+                <p>R$ 120,00</p>
+                <button class="btn-add">Adicionar</button>
+                </a>
+            </div>
+            <!-- Additional product cards can be added here -->
+        </div>
+    </section>
+</body>
+</html>

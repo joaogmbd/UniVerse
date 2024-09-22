@@ -1,0 +1,128 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UniVerse Navbar + Ofertas Atléticas</title>
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+</head>
+<body>
+    <!-- Navbar Section -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <!-- Use static tag to access logo image -->
+                <img src="{% static 'Sem título.png' %}" alt="Descrição da Imagem" width="50" height="50">
+                <div class="logo-text">
+                    <h1>UniVerse</h1>
+                    <span>Products & Events</span>
+                </div>
+            </div>
+            <div class="search-bar">
+                <input type="text" placeholder="Buscar por itens">
+                <button type="submit"><i class="fa fa-search"></i></button>
+            </div>
+            <div class="carrinho-btn" >
+                <a href="{% url "core:carrinho" %}">
+                    <button>Carinho</button>
+                </a>
+            </div>
+            <div class="login-btn" >
+                <a href="{% url "core:login" %}">
+                    <button>Login</button>
+                </a>
+            </div>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Categorias</a></li>
+                <li><a href="#">Ofertas</a></li>
+                <li><a href="{% url "core:atletica" %}">Atléticas</a></li>
+                <li><a href="#">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <div class="container">
+        <aside class="sidebar">
+            <div class="categorias">
+                <h2>Categorias</h2>
+                <ul>
+                    <button type="text" placeholder="Categoria 1">
+                    <button type="text" placeholder="Categoria 2">
+                    <button type="text" placeholder="Categoria 3">
+                    <button type="text" placeholder="Categoria 4">
+                </ul>
+            </div>
+            <div class="filtro-precos">
+                <h2>Filtrar Por Preços</h2>
+                <div class="preco-slider">
+                    <label for="price-min">Min: R$100</label>
+                    <input type="range" id="price-min" name="price-min" min="0" max="500">
+                    <label for="price-max">Max: R$500</label>
+                    <input type="range" id="price-max" name="price-max" min="0" max="500">
+                </div>
+                <div class="filtro-ofertas">
+                    <h3>Ofertas</h3>
+                    <label><input type="checkbox"> Eventos</label><br>
+                    <label><input type="checkbox"> Produtos</label><br>
+                    <label><input type="checkbox"> Todas Sessões</label>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section class="banner">
+                <div class="banner-text">
+                    <h1>Não perca ofertas incríveis das atléticas</h1>
+                    <p>Registre-se para receber ofertas especiais</p>
+                    <a href="{% url "core:registrar" %}">
+                        <button class="btn-register">Registre-se</button>
+                    </a>
+                </div>
+                <div class="banner-image">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7SDCD0OTneaEaVHPhFVrb4R3d7sBM89hExg&s" alt="Frutas" width="500" height="500">
+                </div>
+            </section>
+
+            <section class="products">
+                <div class="product-card">
+                    <a href="{% url "core:produto" %}">
+                    <img src="https://s2-receitas.glbimg.com/yMB7rtVMoW9WyF2KDR4zkU-G92w=/0x0:1366x768/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/N/E/OEOJRtSa6pywDe993Gfg/bolo-de-morango-com-chantilly-receita-2.jpg" alt="Bolo de Morango">
+                    <h3>Bolo di Murango</h3>
+                    <p>R$ 120,00</p>
+                    <button class="btn-add">Adicionar</button>
+                    </a>
+                </div>
+                <div class="product-card">
+                    <a href="{% url "core:produto" %}">
+                    <img src="https://s2-receitas.glbimg.com/yMB7rtVMoW9WyF2KDR4zkU-G92w=/0x0:1366x768/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/N/E/OEOJRtSa6pywDe993Gfg/bolo-de-morango-com-chantilly-receita-2.jpg" alt="Bolo de Chocolate">
+                    <h3>Bolo di Murango</h3>
+                    <p>R$ 120,00</p>
+                    <button class="btn-add">Adicionar</button>
+                    </a>
+                </div>
+                <div class="product-card" href="#">
+                    <a href="{% url "core:produto" %}">
+                    <img src="https://s2-receitas.glbimg.com/yMB7rtVMoW9WyF2KDR4zkU-G92w=/0x0:1366x768/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/N/E/OEOJRtSa6pywDe993Gfg/bolo-de-morango-com-chantilly-receita-2.jpg" alt="Cookies de Baunilha">
+                    <h3>Bolo di Murango</h3>
+                    <p>R$ 120,00</p>
+                    <button class="btn-add">Adicionar</button>
+                    </a>
+                </div>
+                <div class="product-card" href="#">
+                    <a href="{% url "core:produto" %}">
+                    <img src="https://s2-receitas.glbimg.com/yMB7rtVMoW9WyF2KDR4zkU-G92w=/0x0:1366x768/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_1f540e0b94d8437dbbc39d567a1dee68/internal_photos/bs/2022/N/E/OEOJRtSa6pywDe993Gfg/bolo-de-morango-com-chantilly-receita-2.jpg" alt="Cookies de Baunilha">
+                    <h3>Bolo di Murango</h3>
+                    <p>R$ 120,00</p>
+                    <button class="btn-add">Adicionar</button>
+                    </a>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
